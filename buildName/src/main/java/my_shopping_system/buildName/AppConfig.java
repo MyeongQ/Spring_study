@@ -1,6 +1,8 @@
 package my_shopping_system.buildName;
 
+import my_shopping_system.buildName.discount.DiscountPolicy;
 import my_shopping_system.buildName.discount.FixDiscountPolicy;
+import my_shopping_system.buildName.member.MemberRepository;
 import my_shopping_system.buildName.member.MemberService;
 import my_shopping_system.buildName.member.MemberServiceImp;
 import my_shopping_system.buildName.member.MemoryMemberRepository;
@@ -11,12 +13,21 @@ import my_shopping_system.buildName.order.OrderServiceImp;
 public class AppConfig {
 
     public MemberService memberService() {
-        return new MemberServiceImp(new MemoryMemberRepository());
+        return new MemberServiceImp(memberRepository()
+        );
     }
 
     public OrderService orderService() {
         return new OrderServiceImp(
-                new MemoryMemberRepository(),
-                new FixDiscountPolicy());
+                memberRepository(),
+                discountPolicy());
+    }
+
+    public MemberRepository memberRepository() {
+        return new MemoryMemberRepository();
+    }
+
+    public DiscountPolicy discountPolicy() {
+        return new FixDiscountPolicy();
     }
 }
