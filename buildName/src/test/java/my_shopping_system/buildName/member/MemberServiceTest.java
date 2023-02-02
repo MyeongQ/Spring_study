@@ -1,11 +1,20 @@
 package my_shopping_system.buildName.member;
 
+import my_shopping_system.buildName.AppConfig;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class MemberServiceTest {
 
-    MemberService memberService = new MemberServiceImp();
+    MemberService memberService;
+
+    @BeforeEach
+    public void beforeEach() {
+        // 매 테스트마다 appconfig를 생성
+        AppConfig appConfig = new AppConfig();
+        memberService = appConfig.memberService();
+    }
 
     @Test
     void join() {
