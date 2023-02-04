@@ -1,8 +1,7 @@
 package my_shopping_system.buildName;
 
 import my_shopping_system.buildName.discount.DiscountPolicy;
-import my_shopping_system.buildName.discount.FixDiscountPolicy;
-import my_shopping_system.buildName.discount.RateDIscountPolicy;
+import my_shopping_system.buildName.discount.RateDiscountPolicy;
 import my_shopping_system.buildName.member.MemberRepository;
 import my_shopping_system.buildName.member.MemberService;
 import my_shopping_system.buildName.member.MemberServiceImp;
@@ -35,6 +34,6 @@ public class AppConfig {
     @Bean
     public DiscountPolicy discountPolicy() {
         //return new FixDiscountPolicy();
-        return new RateDIscountPolicy();
+        return new RateDiscountPolicy();
     }
 }

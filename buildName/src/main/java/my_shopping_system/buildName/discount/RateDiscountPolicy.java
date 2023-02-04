@@ -3,7 +3,7 @@ package my_shopping_system.buildName.discount;
 import my_shopping_system.buildName.member.Grade;
 import my_shopping_system.buildName.member.Member;
 
-public class RateDIscountPolicy implements DiscountPolicy{
+public class RateDiscountPolicy implements DiscountPolicy{
 
     private int discountRateAmount = 10;  // 10% 할인
 

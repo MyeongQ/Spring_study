@@ -7,9 +7,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 
-class RateDIscountPolicyTest {
+class RateDiscountPolicyTest {
     //RateDIscountPolicy dIscountPolicy = new RateDIscountPolicy();
-    RateDIscountPolicy dIscountPolicy = new RateDIscountPolicy();
+    RateDiscountPolicy dIscountPolicy = new RateDiscountPolicy();
 
     @Test
     @DisplayName("VIP는 10% 할인이 적용되어야 한다.")
