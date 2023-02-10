@@ -1,9 +1,14 @@
 package my_shopping_system.buildName.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MemberServiceImp implements MemberService{
 
     private final MemberRepository memberRepository;
 
+    @Autowired // ac.getBean(MemberRepository.class)와 같음
     public MemberServiceImp(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
