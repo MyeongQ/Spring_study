@@ -7,22 +7,21 @@ import my_shopping_system.buildName.member.Member;
 import my_shopping_system.buildName.member.MemberRepository;
 import my_shopping_system.buildName.member.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class OrderServiceImp implements OrderService{
 
     private final MemberRepository memberRepository; // final의 의미 = 값이 꼭 있어야 함
     private final DiscountPolicy discountPolicy;
 
-    /*
     @Autowired
-    public OrderServiceImp(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImp(MemberRepository memberRepository, @Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
-    */
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
