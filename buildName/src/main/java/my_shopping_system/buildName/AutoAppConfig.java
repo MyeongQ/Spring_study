@@ -1,5 +1,8 @@
 package my_shopping_system.buildName;
 
+import my_shopping_system.buildName.member.MemberRepository;
+import my_shopping_system.buildName.member.MemoryMemberRepository;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
@@ -12,5 +15,8 @@ import org.springframework.context.annotation.FilterType;
 ) // AppConfig나 TestConfig 등 @Configuration이 붙은 설정 정보는 제외
 public class AutoAppConfig {
 
-
+    @Bean(name= "memoryMemberRepository")
+    MemberRepository memberRepository() {
+        return new MemoryMemberRepository();
+    }
 }
