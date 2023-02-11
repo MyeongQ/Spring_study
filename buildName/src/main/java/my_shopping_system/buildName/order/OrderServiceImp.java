@@ -1,6 +1,7 @@
 package my_shopping_system.buildName.order;
 
 import lombok.RequiredArgsConstructor;
+import my_shopping_system.buildName.annotation.MainDiscountPolicy;
 import my_shopping_system.buildName.discount.DiscountPolicy;
 import my_shopping_system.buildName.discount.FixDiscountPolicy;
 import my_shopping_system.buildName.member.Member;
@@ -18,7 +19,7 @@ public class OrderServiceImp implements OrderService{
     private final DiscountPolicy discountPolicy;
 
     @Autowired
-    public OrderServiceImp(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImp(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
