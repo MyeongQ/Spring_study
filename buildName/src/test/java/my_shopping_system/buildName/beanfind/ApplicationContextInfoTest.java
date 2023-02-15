@@ -7,8 +7,10 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class ApplicationContextInfoTest {
-    
-    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+
+    // 스프링 컨테이너 생성
+    AnnotationConfigApplicationContext ac =
+            new AnnotationConfigApplicationContext(AppConfig.class);
     
     @Test
     @DisplayName("모든 빈 출력하기")
@@ -23,8 +25,10 @@ public class ApplicationContextInfoTest {
     @Test
     @DisplayName("어플리케이션 빈 출력하기")
     void findApplicationBean() {
+        // 스프링 컨테이너에 등록된 모든 빈 이름을 조회
         String[] beanDefinitionNames = ac.getBeanDefinitionNames();
         for (String beanDefinitionName : beanDefinitionNames) {
+            // 빈 이름으로
             BeanDefinition beanDefinition = ac.getBeanDefinition(beanDefinitionName);
 
             // Role ROLE_APPLICATION: 직접 등록한 애플리케이션 빈
