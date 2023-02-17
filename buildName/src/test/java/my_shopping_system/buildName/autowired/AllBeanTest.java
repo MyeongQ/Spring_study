@@ -19,6 +19,8 @@ public class AllBeanTest {
 
     @Test
     void findAllBean() {
+        // DiscountService는 DiscountPolicy를 구현한 모든 빈을 주입받는다.
+        // DiscountService 또한 빈으로 등록되어 있으므로, DiscountService도 주입받는다.
         ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class, DiscountService.class);
 
         DiscountService discountService = ac.getBean(DiscountService.class);
@@ -36,7 +38,6 @@ public class AllBeanTest {
         private final Map<String, DiscountPolicy> policyMap;
         private final List<DiscountPolicy> policies;
 
-        @Autowired
         public DiscountService(Map<String, DiscountPolicy> policyMap, List<DiscountPolicy> policies) {
             this.policyMap = policyMap;
             this.policies = policies;
