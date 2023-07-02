@@ -42,10 +42,10 @@ public class MappingClassController {
         return "patch userId=" + userId;
     }
 
-    @DeleteMapping("/{userId}")
-    public String deleteUser(@PathVariable String userId) {
-        log.info("delete users userId={}", userId);
-        return "delete user=" + userId;
+    @DeleteMapping
+    public String deleteUser() {
+        log.info("delete users");
+        return "delete users";
     }
 
 }
