@@ -1,6 +1,6 @@
-package com.example.spring_core_advanced2.controller;
+package com.example.spring_core_advanced2.app.vo.controller;
 
-import com.example.spring_core_advanced2.service.OrderServiceV0;
+import com.example.spring_core_advanced2.app.vo.service.OrderServiceV0;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
